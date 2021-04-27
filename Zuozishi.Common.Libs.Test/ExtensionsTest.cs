@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Xunit;
 using Zuozishi.Common.Libs.Utils.Extensions;
 
@@ -7,7 +7,7 @@ namespace Zuozishi.Common.Libs.Test
     public class ExtensionsTest
     {
         [Fact]
-        public void Ê±¼ä´Á()
+        public void æ—¶é—´æˆ³()
         {
             var time = DateTime.Parse("2021-04-27 09:56:17");
             var secTimestamp = time.GetTimestampSeconds();
@@ -19,7 +19,7 @@ namespace Zuozishi.Common.Libs.Test
         [Theory]
         [InlineData(new object[] { new object[] { 2, 4, 6, 8 }, "|", "2|4|6|8" })]
         [InlineData(new object[] { new object[] {"asd", "zxc", "qwe" }, ",", "asd,zxc,qwe" })]
-        public void Êı×é×ª·Ö¸ô·û×Ö·û´®(object[] array, string split, string res)
+        public void æ•°ç»„è½¬åˆ†éš”ç¬¦å­—ç¬¦ä¸²(object[] array, string split, string res)
         {
             Assert.Equal(array.ToString(split), res);
         }
@@ -27,14 +27,14 @@ namespace Zuozishi.Common.Libs.Test
         [Theory]
         [InlineData(new object[] { new object[] { 2, 4, 6, 8 }, 6, 2 })]
         [InlineData(new object[] { new object[] { "asd", "zxc", "qwe" }, "asd", 0})]
-        public void ²éÕÒÔªËØËùÔÚµÄÎ»ÖÃ(object[] array, object item, int index)
+        public void æŸ¥æ‰¾å…ƒç´ æ‰€åœ¨çš„ä½ç½®(object[] array, object item, int index)
         {
             int index1 = array.IndexOf(item);
             Assert.Equal(index, index1);
         }
 
         [Fact]
-        public void Json¸ñÊ½»¯()
+        public void Jsonæ ¼å¼åŒ–()
         {
             var json = "{\"name\":\"asd\"}";
             json = json.PrettyJson();
