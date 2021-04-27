@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Zuozishi.Common.Libs.Utils.Extensions
+namespace Zuozishi.Common.Libs.Extensions
 {
     public static class StringExtension
     {

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31213.239
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zuozishi.Common.Libs", "Zuozishi.Common.Libs\Zuozishi.Common.Libs.csproj", "{62BF47CE-A748-44A3-AD12-246C3D292540}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuozishi.Common.Libs.Extensions", "Zuozishi.Common.Libs.Extensions\Zuozishi.Common.Libs.Extensions.csproj", "{62BF47CE-A748-44A3-AD12-246C3D292540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zuozishi.Common.Libs.Test", "Zuozishi.Common.Libs.Test\Zuozishi.Common.Libs.Test.csproj", "{78CBD986-30AC-420A-BB0D-59AF9160C5AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuozishi.Common.Libs.Test", "Zuozishi.Common.Libs.Test\Zuozishi.Common.Libs.Test.csproj", "{78CBD986-30AC-420A-BB0D-59AF9160C5AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

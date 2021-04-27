@@ -1,4 +1,4 @@
-name: .NET NuGet
+name: Github Package (Zuozishi.Common.Libs.Extensions)
 
 on:
   push:
@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Shanghai
+      PACKAGE_ID: Zuozishi.Common.Libs.Extensions
     steps:
     - uses: actions/checkout@v2
     - name: 初始化
@@ -19,7 +20,7 @@ jobs:
         dotnet-version: 5.0.x
     - name: 处理文本
       run: |
-        sed -i "s/{version}/`cat ./Zuozishi.Common.Libs/version.txt`/" ./Zuozishi.Common.Libs/Zuozishi.Common.Libs.csproj
+        sed -i "s/0.0.0/`cat ./$PACKAGE_ID/version.txt`/" ./$PACKAGE_ID/$PACKAGE_ID.csproj
         sed -i "s/{GITHUB_TOKEN}/${{ secrets.GITHUB_TOKEN }}/" ./nuget.config
     - name: 还原Nuget
       run: dotnet restore
@@ -30,4 +31,4 @@ jobs:
     - name: 打包
       run: dotnet pack --configuration Release
     - name: 发布
-      run: dotnet nuget push "./Zuozishi.Common.Libs/bin/Release/Zuozishi.Common.Libs.`cat ./Zuozishi.Common.Libs/version.txt`.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+      run: dotnet nuget push "./$PACKAGE_ID/bin/Release/$PACKAGE_ID.`cat ./$PACKAGE_ID/version.txt`.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"

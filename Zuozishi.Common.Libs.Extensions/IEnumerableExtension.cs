@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zuozishi.Common.Libs.Utils.Extensions
+namespace Zuozishi.Common.Libs.Extensions
 {
     public static class IEnumerableExtension
     {
