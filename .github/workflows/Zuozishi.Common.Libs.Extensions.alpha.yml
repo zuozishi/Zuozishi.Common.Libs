@@ -3,8 +3,6 @@ name: Zuozishi.Common.Libs.Extensions
 on:
   push:
     branches: [ dev ]
-  pull_request:
-    branches: [ dev ]
 
 jobs:
   build:
