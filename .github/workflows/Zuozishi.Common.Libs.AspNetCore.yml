@@ -3,12 +3,8 @@ name: Zuozishi.Common.Libs.AspNetCore
 on:
   push:
     branches: [ master ]
-    paths:
-    - Zuozishi.Common.Libs.AspNetCore/**
   pull_request:
     branches: [ master ]
-    paths:
-    - Zuozishi.Common.Libs.AspNetCore/**
 
 jobs:
   build:

@@ -3,12 +3,8 @@ name: Zuozishi.Common.Libs.Extensions
 on:
   push:
     branches: [ master ]
-    paths:
-    - Zuozishi.Common.Libs.Extensions/**
   pull_request:
     branches: [ master ]
-    paths:
-    - Zuozishi.Common.Libs.Extensions/**
 
 jobs:
   build:

@@ -3,12 +3,8 @@ name: Zuozishi.Common.Libs.EFCore
 on:
   push:
     branches: [ master ]
-    paths:
-    - Zuozishi.Common.Libs.EFCore/**
   pull_request:
     branches: [ master ]
-    paths:
-    - Zuozishi.Common.Libs.EFCore/**
 
 jobs:
   build:

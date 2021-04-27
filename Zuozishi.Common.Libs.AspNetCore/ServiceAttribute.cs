@@ -3,6 +3,9 @@ using System;
 
 namespace Zuozishi.Common.Libs.AspNetCore
 {
+    /// <summary>
+    /// DI服务注解
+    /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
     public class ServiceAttribute : Attribute
     {
