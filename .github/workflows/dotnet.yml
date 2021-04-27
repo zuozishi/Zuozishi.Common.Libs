@@ -17,9 +17,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: 处理版本号
+    - name: 处理文本
       run: |
         sed -i "s/{version}/`cat ./Zuozishi.Common.Libs/version.txt`/" ./Zuozishi.Common.Libs/Zuozishi.Common.Libs.csproj
+        sed -i "s/{GITHUB_TOKEN}/${{ secrets.GITHUB_TOKEN }}/" ./nuget.config
     - name: 还原Nuget
       run: dotnet restore
     - name: 编译
