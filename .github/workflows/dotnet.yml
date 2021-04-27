@@ -30,4 +30,4 @@ jobs:
     - name: 打包
       run: dotnet pack --configuration Release
     - name: 发布
-      run: dotnet nuget push "bin/Release/Zuozishi.Common.Libs.`cat ./Zuozishi.Common.Libs/version.txt`.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+      run: dotnet nuget push "./Zuozishi.Common.Libs/bin/Release/Zuozishi.Common.Libs.`cat ./Zuozishi.Common.Libs/version.txt`.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
