@@ -17,11 +17,11 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    - name: 还原Nuget
+      run: dotnet restore
     - name: 处理版本号
       run: |
         sed -i "s/{version}/`cat ./Zuozishi.Common.Libs/version.txt`/" ./Zuozishi.Common.Libs/Zuozishi.Common.Libs.csproj
-    - name: 还原Nuget
-      run: dotnet restore
     - name: 编译
       run: dotnet build --no-restore
     - name: 测试
