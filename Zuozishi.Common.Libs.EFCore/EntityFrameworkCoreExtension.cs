@@ -22,6 +22,13 @@ namespace Zuozishi.Common.Libs.EFCore
             return cmd;
         }
 
+        /// <summary>
+        /// 执行自定义SQL查询
+        /// </summary>
+        /// <param name="facade"></param>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static DataTable SqlQuery(this DatabaseFacade facade, string sql, params object[] parameters)
         {
 
@@ -34,14 +41,34 @@ namespace Zuozishi.Common.Libs.EFCore
             return dt;
         }
 
+        /// <summary>
+        /// 执行自定义SQL查询
+        /// </summary>
+        /// <param name="facade"></param>
+        /// <param name="sql"></param>
+        /// <returns></returns>
         public static DataTable SqlQuery(this DatabaseFacade facade, string sql) => SqlQuery(facade, sql, null);
 
+        /// <summary>
+        /// 执行自定义SQL查询
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="facade"></param>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static List<T> SqlQuery<T>(this DatabaseFacade facade, string sql, params object[] parameters) where T : class, new()
         {
             var dt = SqlQuery(facade, sql, parameters);
             return dt.ToList<T>();
         }
 
+        /// <summary>
+        /// DataTable转对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         public static List<T> ToList<T>(this DataTable dt) where T : class, new()
         {
             var propertyInfos = typeof(T).GetProperties();
