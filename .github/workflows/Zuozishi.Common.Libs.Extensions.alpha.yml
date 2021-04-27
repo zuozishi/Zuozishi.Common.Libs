@@ -3,12 +3,8 @@ name: Zuozishi.Common.Libs.Extensions
 on:
   push:
     branches: [ dev ]
-    paths:
-    - Zuozishi.Common.Libs.Extensions/**
   pull_request:
     branches: [ dev ]
-    paths:
-    - Zuozishi.Common.Libs.Extensions/**
 
 jobs:
   build:
@@ -24,7 +20,7 @@ jobs:
         dotnet-version: 5.0.x
     - name: 处理文本
       run: |
-        sed -i "s/0.0.0/`cat ./$PACKAGE_ID/version.txt`/" ./$PACKAGE_ID/$PACKAGE_ID.csproj
+        sed -i "s/0.0.0/`cat ./$PACKAGE_ID/version.txt`-alpha/" ./$PACKAGE_ID/$PACKAGE_ID.csproj
         sed -i "s/{GITHUB_TOKEN}/${{ secrets.GITHUB_TOKEN }}/" ./nuget.config
     - name: 还原Nuget
       run: dotnet restore
