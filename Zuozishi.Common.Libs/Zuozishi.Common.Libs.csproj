@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageId>Zuozishi.Common.Libs</PackageId>
+    <Version>﻿{version}</Version>
+    <Authors>Zuozishi</Authors>
+    <PackageDescription>.Net常用工具集</PackageDescription>
+    <RepositoryUrl>https://github.com/zuozishi/Zuozishi.Common.Libs</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
