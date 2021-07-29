@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageId>Zuozishi.Common.Libs.QingTui</PackageId>
+    <Version>0.0.0</Version>
+    <Authors>Zuozishi</Authors>
+    <PackageDescription>轻推SDK</PackageDescription>
+    <RepositoryUrl>https://github.com/zuozishi/Zuozishi.Common.Libs</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

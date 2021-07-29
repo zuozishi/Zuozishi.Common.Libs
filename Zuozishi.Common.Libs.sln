@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuozishi.Common.Libs.EFCore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuozishi.Common.Libs.QingTui", "Zuozishi.Common.Libs.QingTui\Zuozishi.Common.Libs.QingTui.csproj", "{6105A901-C63E-450A-B150-83E0320821E0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuozishi.Common.Libs.Extensions", "Zuozishi.Common.Libs.Extensions\Zuozishi.Common.Libs.Extensions.csproj", "{F9D8798E-BC2C-4958-8CE4-DC973A54D835}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6105A901-C63E-450A-B150-83E0320821E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6105A901-C63E-450A-B150-83E0320821E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6105A901-C63E-450A-B150-83E0320821E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9D8798E-BC2C-4958-8CE4-DC973A54D835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9D8798E-BC2C-4958-8CE4-DC973A54D835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9D8798E-BC2C-4958-8CE4-DC973A54D835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9D8798E-BC2C-4958-8CE4-DC973A54D835}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
