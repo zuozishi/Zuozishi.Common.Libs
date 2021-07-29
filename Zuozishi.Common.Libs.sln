@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31213.239
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuozishi.Common.Libs.Extensions", "Zuozishi.Common.Libs.Extensions\Zuozishi.Common.Libs.Extensions.csproj", "{62BF47CE-A748-44A3-AD12-246C3D292540}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuozishi.Common.Libs.Test", "Zuozishi.Common.Libs.Test\Zuozishi.Common.Libs.Test.csproj", "{78CBD986-30AC-420A-BB0D-59AF9160C5AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zuozishi.Common.Libs.AspNetCore", "Zuozishi.Common.Libs.AspNetCore\Zuozishi.Common.Libs.AspNetCore.csproj", "{343730CD-0693-4AB1-80BC-2CE58B598BD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuozishi.Common.Libs.AspNetCore", "Zuozishi.Common.Libs.AspNetCore\Zuozishi.Common.Libs.AspNetCore.csproj", "{343730CD-0693-4AB1-80BC-2CE58B598BD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zuozishi.Common.Libs.EFCore", "Zuozishi.Common.Libs.EFCore\Zuozishi.Common.Libs.EFCore.csproj", "{6E3D0F94-8E05-4AA4-B0BF-974D9CCF0C7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuozishi.Common.Libs.EFCore", "Zuozishi.Common.Libs.EFCore\Zuozishi.Common.Libs.EFCore.csproj", "{6E3D0F94-8E05-4AA4-B0BF-974D9CCF0C7F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuozishi.Common.Libs.QingTui", "Zuozishi.Common.Libs.QingTui\Zuozishi.Common.Libs.QingTui.csproj", "{6105A901-C63E-450A-B150-83E0320821E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{62BF47CE-A748-44A3-AD12-246C3D292540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62BF47CE-A748-44A3-AD12-246C3D292540}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62BF47CE-A748-44A3-AD12-246C3D292540}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62BF47CE-A748-44A3-AD12-246C3D292540}.Release|Any CPU.Build.0 = Release|Any CPU
 		{78CBD986-30AC-420A-BB0D-59AF9160C5AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{78CBD986-30AC-420A-BB0D-59AF9160C5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78CBD986-30AC-420A-BB0D-59AF9160C5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{6E3D0F94-8E05-4AA4-B0BF-974D9CCF0C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E3D0F94-8E05-4AA4-B0BF-974D9CCF0C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E3D0F94-8E05-4AA4-B0BF-974D9CCF0C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6105A901-C63E-450A-B150-83E0320821E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6105A901-C63E-450A-B150-83E0320821E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6105A901-C63E-450A-B150-83E0320821E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6105A901-C63E-450A-B150-83E0320821E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
