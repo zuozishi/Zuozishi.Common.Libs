@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Zuozishi.Common.Libs.Extensions\Zuozishi.Common.Libs.Extensions.csproj" />
+    <ProjectReference Include="..\Zuozishi.Common.Libs.QingTui\Zuozishi.Common.Libs.QingTui.csproj" />
   </ItemGroup>
 
 </Project>

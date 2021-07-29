@@ -18,7 +18,7 @@ namespace Zuozishi.Common.Libs.Test
 
         [Theory]
         [InlineData(new object[] { new object[] { 2, 4, 6, 8 }, "|", "2|4|6|8" })]
-        [InlineData(new object[] { new object[] {"asd", "zxc", "qwe" }, ",", "asd,zxc,qwe" })]
+        [InlineData(new object[] { new object[] { "asd", "zxc", "qwe" }, ",", "asd,zxc,qwe" })]
         public void 数组转分隔符字符串(object[] array, string split, string res)
         {
             Assert.Equal(array.ToString(split), res);
@@ -26,7 +26,7 @@ namespace Zuozishi.Common.Libs.Test
 
         [Theory]
         [InlineData(new object[] { new object[] { 2, 4, 6, 8 }, 6, 2 })]
-        [InlineData(new object[] { new object[] { "asd", "zxc", "qwe" }, "asd", 0})]
+        [InlineData(new object[] { new object[] { "asd", "zxc", "qwe" }, "asd", 0 })]
         public void 查找元素所在的位置(object[] array, object item, int index)
         {
             int index1 = array.IndexOf(item);

@@ -13,7 +13,7 @@ namespace Zuozishi.Common.Libs.Extensions
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 sb.Append(dt.Columns[i].ColumnName);
-                if(i < dt.Columns.Count - 1)
+                if (i < dt.Columns.Count - 1)
                     sb.Append(",");
             }
             sb.Append(Environment.NewLine);

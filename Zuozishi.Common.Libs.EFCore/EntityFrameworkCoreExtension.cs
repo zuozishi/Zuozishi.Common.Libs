@@ -80,7 +80,7 @@ namespace Zuozishi.Common.Libs.EFCore
                 {
                     string name = p.Name;
                     var attr = p.GetCustomAttribute(typeof(ColumnAttribute), false);
-                    if(attr != null)
+                    if (attr != null)
                     {
                         var attrObj = attr as ColumnAttribute;
                         if (!string.IsNullOrEmpty(attrObj.Name))
