@@ -22,6 +22,7 @@ namespace Zuozishi.Common.Libs.QingTui
             Message = new QtMessageAPI(this);
             Member = new QtMemberAPI(this);
             Org = new QtOrgAPI(this);
+            Web = new QtWebAPI(this);
         }
 
         public QtMessageAPI Message { get; private set; }
@@ -29,6 +30,8 @@ namespace Zuozishi.Common.Libs.QingTui
         public QtMemberAPI Member { get; private set; }
 
         public QtOrgAPI Org { get; private set; }
+
+        public QtWebAPI Web { get; private set; }
 
         internal async Task<T> GetJsonAsync<T>(Url url) where T : ErrorResponse
         {

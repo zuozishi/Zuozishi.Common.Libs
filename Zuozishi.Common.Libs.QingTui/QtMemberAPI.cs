@@ -102,7 +102,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// </summary>
         /// <param name="userId">企业内用户Id</param>
         /// <returns></returns>
-        public async Task<MemberResponse> GetMemberDetail(string userId)
+        public async Task<MemberResponse> GetMemberDetailAsync(string userId)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("team/member/detail")
                 .SetQueryParam("user_id", userId);

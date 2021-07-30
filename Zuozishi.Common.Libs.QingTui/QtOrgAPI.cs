@@ -95,7 +95,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// </summary>
         /// <param name="orgId">组织机构id，root在此处不可用</param>
         /// <returns></returns>
-        public async Task<OrgResponse> GetOrgDetail(string orgId)
+        public async Task<OrgResponse> GetOrgDetailAsync(string orgId)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("team/member/detail")
                 .SetQueryParam("org_id", orgId);
