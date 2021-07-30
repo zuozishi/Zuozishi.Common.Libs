@@ -59,7 +59,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// </summary>
         /// <param name="userId">企业内用户id</param>
         /// <returns></returns>
-        public async Task<OpenIdResponse> GetOpenIdByUserId(string userId)
+        public async Task<OpenIdResponse> GetOpenIdByUserIdAsync(string userId)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("team/member/openid/get")
                 .SetQueryParam("user_id", userId);
@@ -73,7 +73,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// </summary>
         /// <param name="message">发送的文本消息内容</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendTextMessage(string message)
+        public async Task<SendMessageResponse> SendTextMessageAsync(string message)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/text/send/service");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -91,7 +91,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="message">发送的文本消息内容</param>
         /// <param name="users">要发送的用户openid列表</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendTextMessage(string message, params string[] users)
+        public async Task<SendMessageResponse> SendTextMessageAsync(string message, params string[] users)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/text/send/mass");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -110,7 +110,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="channelId">要发送的群聊id</param>
         /// <param name="message">发送的文本消息内容</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendGroupTextMessage(string channelId, string message)
+        public async Task<SendMessageResponse> SendGroupTextMessageAsync(string channelId, string message)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/text/send/channel");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -130,7 +130,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// </summary>
         /// <param name="mediaId">图片id，通过上传多媒体文件方法获得</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendImage(string mediaId)
+        public async Task<SendMessageResponse> SendImageAsync(string mediaId)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/image/send/service");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -148,7 +148,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="mediaId">图片id，通过上传多媒体文件方法获得</param>
         /// <param name="users">要发送的用户openid列表</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendImage(string mediaId, params string[] users)
+        public async Task<SendMessageResponse> SendImageAsync(string mediaId, params string[] users)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/image/send/mass");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -188,7 +188,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="card">卡片信息</param>
         /// <param name="users">要发送的用户openid列表</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendTextCardMessage(TextCardMessage card, params string[] users)
+        public async Task<SendMessageResponse> SendTextCardMessageAsync(TextCardMessage card, params string[] users)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/textCard/send/mass");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -204,7 +204,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="channelId">要发送的群聊id</param>
         /// <param name="card">卡片信息</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendGroupTextCardMessage(string channelId, TextCardMessage card)
+        public async Task<SendMessageResponse> SendGroupTextCardMessageAsync(string channelId, TextCardMessage card)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/textCard/send/channel");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -221,7 +221,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// </summary>
         /// <param name="news">图文卡片</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendNews(params NewsMessage[] news)
+        public async Task<SendMessageResponse> SendNewsAsync(params NewsMessage[] news)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/news/send/service");
             var article_list = new List<object>();
@@ -244,7 +244,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="news">图文卡片</param>
         /// <param name="users">要发送的用户openid列表</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendNews(NewsMessage[] news, params string[] users)
+        public async Task<SendMessageResponse> SendNewsAsync(NewsMessage[] news, params string[] users)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/news/send/mass");
             var article_list = new List<object>();
@@ -294,7 +294,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="keyValue">key-value消息</param>
         /// <param name="users">要发送的用户openid列表</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendKeyValueMessage(KeyValueMessage keyValue, params string[] users)
+        public async Task<SendMessageResponse> SendKeyValueMessageAsync(KeyValueMessage keyValue, params string[] users)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/keyValue/send/mass");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -310,7 +310,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="channelId">要发送的群聊id</param>
         /// <param name="keyValue">key-value消息</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendGroupKeyValueMessage(string channelId, KeyValueMessage keyValue)
+        public async Task<SendMessageResponse> SendGroupKeyValueMessageAsync(string channelId, KeyValueMessage keyValue)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/keyValue/send/channel");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -327,7 +327,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// </summary>
         /// <param name="mediaId">文件id，通过上传多媒体文件方法获得</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendFile(string mediaId)
+        public async Task<SendMessageResponse> SendFileAsync(string mediaId)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/file/send/service");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -345,7 +345,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="mediaId">文件id，通过上传多媒体文件方法获得</param>
         /// <param name="users">要发送的用户openid列表</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendFile(string mediaId, params string[] users)
+        public async Task<SendMessageResponse> SendFileAsync(string mediaId, params string[] users)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/file/send/mass");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -384,7 +384,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// </summary>
         /// <param name="json">发送的卡片消息内容</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendCardMessage(string json)
+        public async Task<SendMessageResponse> SendCardMessageAsync(string json)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/card/send/service");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -402,7 +402,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="json">发送的卡片消息内容</param>
         /// <param name="users">要发送的用户openid列表</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendCardMessage(string json, params string[] users)
+        public async Task<SendMessageResponse> SendCardMessageAsync(string json, params string[] users)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/card/send/mass");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -421,7 +421,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="channelId">要发送的群聊id</param>
         /// <param name="json">发送的卡片消息内容</param>
         /// <returns></returns>
-        public async Task<SendMessageResponse> SendGroupCardMessage(string channelId, string json)
+        public async Task<SendMessageResponse> SendGroupCardMessageAsync(string channelId, string json)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/card/send/channel");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new
@@ -442,7 +442,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="message">待办信息</param>
         /// <param name="users">要发送的用户openid列表</param>
         /// <returns></returns>
-        public async Task<ProcessMessageResponse> SendProcessMessage(ProcessMessage message, string openId)
+        public async Task<ProcessMessageResponse> SendProcessMessageAsync(ProcessMessage message, string openId)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/process/send/single");
             return await _qtAPI.PostJsonAsync<ProcessMessageResponse>(url, new
@@ -458,7 +458,7 @@ namespace Zuozishi.Common.Libs.QingTui
         /// <param name="msgId"></param>
         /// <param name="openId"></param>
         /// <returns></returns>
-        public async Task<ErrorResponse> CompleteProcessMessage(string msgId, string openId)
+        public async Task<ErrorResponse> CompleteProcessMessageAsync(string msgId, string openId)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("v1/message/process/complete");
             return await _qtAPI.PostJsonAsync<SendMessageResponse>(url, new

@@ -2,7 +2,7 @@
 using System;
 using System.Diagnostics;
 
-namespace Zuozishi.Common.Libs.EFCore
+namespace Zuozishi.Common.Libs.AspNetCore
 {
     /// <summary>
     /// 性能分析

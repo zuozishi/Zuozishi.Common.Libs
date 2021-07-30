@@ -24,7 +24,7 @@ namespace Zuozishi.Common.Libs.QingTui.Response
         {
             get
             {
-                object? type;
+                object type = null;
                 System.Enum.TryParse(typeof(UploadFileType), Type, true, out type);
                 return (UploadFileType)type;
             }
