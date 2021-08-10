@@ -12,14 +12,23 @@ namespace Zuozishi.Common.Libs.EFCore
 {
     public static class EntityFrameworkCoreExtension
     {
-        private static DbCommand CreateCommand(DatabaseFacade facade, string sql, out DbConnection connection, params object[] parameters)
+        private static DbCommand CreateCommand(DatabaseFacade facade, string sql, out DbConnection connection, params KeyValuePair<string, object>[] parameters)
         {
             var conn = facade.GetDbConnection();
             connection = conn;
             conn.Open();
             var cmd = conn.CreateCommand();
             cmd.CommandText = sql;
-            if (parameters != null && parameters.Length > 0) cmd.Parameters.AddRange(parameters);
+            if (parameters != null)
+            {
+                foreach (var item in parameters)
+                {
+                    var param = cmd.CreateParameter();
+                    param.ParameterName = item.Key;
+                    param.Value = item.Value;
+                    cmd.Parameters.Add(param);
+                }
+            }
             return cmd;
         }
 
@@ -30,9 +39,8 @@ namespace Zuozishi.Common.Libs.EFCore
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static DataTable SqlQuery(this DatabaseFacade facade, string sql, params object[] parameters)
+        public static DataTable SqlQuery(this DatabaseFacade facade, string sql, params KeyValuePair<string, object>[] parameters)
         {
-
             var command = CreateCommand(facade, sql, out DbConnection conn, parameters);
             var reader = command.ExecuteReader();
             var dt = new DataTable();
@@ -49,7 +57,7 @@ namespace Zuozishi.Common.Libs.EFCore
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static async Task<DataTable> SqlQueryAsync(this DatabaseFacade facade, string sql, params object[] parameters)
+        public static async Task<DataTable> SqlQueryAsync(this DatabaseFacade facade, string sql, params KeyValuePair<string, object>[] parameters)
         {
             var command = CreateCommand(facade, sql, out DbConnection conn, parameters);
             var reader = await command.ExecuteReaderAsync();
@@ -63,28 +71,12 @@ namespace Zuozishi.Common.Libs.EFCore
         /// <summary>
         /// 执行自定义SQL查询
         /// </summary>
-        /// <param name="facade"></param>
-        /// <param name="sql"></param>
-        /// <returns></returns>
-        public static DataTable SqlQuery(this DatabaseFacade facade, string sql) => SqlQuery(facade, sql, null);
-
-        /// <summary>
-        /// 执行自定义SQL查询
-        /// </summary>
-        /// <param name="facade"></param>
-        /// <param name="sql"></param>
-        /// <returns></returns>
-        public static async Task<DataTable> SqlQueryAsync(this DatabaseFacade facade, string sql) => await SqlQueryAsync(facade, sql, null);
-
-        /// <summary>
-        /// 执行自定义SQL查询
-        /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="facade"></param>
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static List<T> SqlQuery<T>(this DatabaseFacade facade, string sql, params object[] parameters) where T : class, new()
+        public static List<T> SqlQuery<T>(this DatabaseFacade facade, string sql, params KeyValuePair<string, object>[] parameters) where T : class, new()
         {
             var dt = SqlQuery(facade, sql, parameters);
             return dt.ToList<T>();
@@ -98,7 +90,7 @@ namespace Zuozishi.Common.Libs.EFCore
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static async Task<List<T>> SqlQueryAsync<T>(this DatabaseFacade facade, string sql, params object[] parameters) where T : class, new()
+        public static async Task<List<T>> SqlQueryAsync<T>(this DatabaseFacade facade, string sql, params KeyValuePair<string, object>[] parameters) where T : class, new()
         {
             var dt = await SqlQueryAsync(facade, sql, parameters);
             return dt.ToList<T>();
