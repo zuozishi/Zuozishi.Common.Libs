@@ -1,9 +1,6 @@
 ﻿using Flurl;
 using Flurl.Http;
 using HeyRed.Mime;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
 using Zuozishi.Common.Libs.QingTui.Request;
 using Zuozishi.Common.Libs.QingTui.Response;
 

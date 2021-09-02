@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Zuozishi.Common.Libs.QingTui.Request
+﻿namespace Zuozishi.Common.Libs.QingTui.Request
 {
     /// <summary>
     /// key-value消息

@@ -1,5 +1,4 @@
-﻿using System;
-using Zuozishi.Common.Libs.AspNetCore;
+﻿using Zuozishi.Common.Libs.AspNetCore;
 
 namespace Microsoft.Extensions.DependencyInjection
 {

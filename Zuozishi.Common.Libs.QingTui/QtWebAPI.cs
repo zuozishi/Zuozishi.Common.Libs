@@ -1,6 +1,5 @@
 ﻿using Flurl;
 using Flurl.Http;
-using System.Threading.Tasks;
 using Zuozishi.Common.Libs.QingTui.Response;
 
 namespace Zuozishi.Common.Libs.QingTui
