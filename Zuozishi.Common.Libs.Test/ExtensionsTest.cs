@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 using Zuozishi.Common.Libs.Extensions;
 
 namespace Zuozishi.Common.Libs.Test
