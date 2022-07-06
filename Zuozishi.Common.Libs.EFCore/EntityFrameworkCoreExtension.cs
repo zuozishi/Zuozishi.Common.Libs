@@ -1,12 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Data.Common;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Zuozishi.Common.Libs.EFCore
 {
@@ -39,9 +36,9 @@ namespace Zuozishi.Common.Libs.EFCore
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static DataTable SqlQuery(this DatabaseFacade facade, string sql, params KeyValuePair<string, object>[] parameters)
+        public static DataTable SqlQuery(this DbContext context, string sql, params KeyValuePair<string, object>[] parameters)
         {
-            var command = CreateCommand(facade, sql, out DbConnection conn, parameters);
+            var command = CreateCommand(context.Database, sql, out DbConnection conn, parameters);
             var reader = command.ExecuteReader();
             var dt = new DataTable();
             dt.Load(reader);
@@ -57,9 +54,9 @@ namespace Zuozishi.Common.Libs.EFCore
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static async Task<DataTable> SqlQueryAsync(this DatabaseFacade facade, string sql, params KeyValuePair<string, object>[] parameters)
+        public static async Task<DataTable> SqlQueryAsync(this DbContext context, string sql, params KeyValuePair<string, object>[] parameters)
         {
-            var command = CreateCommand(facade, sql, out DbConnection conn, parameters);
+            var command = CreateCommand(context.Database, sql, out DbConnection conn, parameters);
             var reader = await command.ExecuteReaderAsync();
             var dt = new DataTable();
             dt.Load(reader);
@@ -76,9 +73,9 @@ namespace Zuozishi.Common.Libs.EFCore
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static List<T> SqlQuery<T>(this DatabaseFacade facade, string sql, params KeyValuePair<string, object>[] parameters) where T : class, new()
+        public static List<T> SqlQuery<T>(this DbContext context, string sql, params KeyValuePair<string, object>[] parameters) where T : class, new()
         {
-            var dt = SqlQuery(facade, sql, parameters);
+            using var dt = SqlQuery(context, sql, parameters);
             return dt.ToList<T>();
         }
 
@@ -90,9 +87,9 @@ namespace Zuozishi.Common.Libs.EFCore
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static async Task<List<T>> SqlQueryAsync<T>(this DatabaseFacade facade, string sql, params KeyValuePair<string, object>[] parameters) where T : class, new()
+        public static async Task<List<T>> SqlQueryAsync<T>(this DbContext context, string sql, params KeyValuePair<string, object>[] parameters) where T : class, new()
         {
-            var dt = await SqlQueryAsync(facade, sql, parameters);
+            using var dt = await SqlQueryAsync(context, sql, parameters);
             return dt.ToList<T>();
         }
 

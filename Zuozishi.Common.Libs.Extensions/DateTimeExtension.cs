@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Zuozishi.Common.Libs.Extensions
+﻿namespace Zuozishi.Common.Libs.Extensions
 {
     public static class DateTimeExtension
     {

@@ -15,7 +15,7 @@ jobs:
     - name: 初始化
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 6.0.x
     - name: 处理文本
       run: |
         sed -i "s/0.0.0/`cat ./$PACKAGE_ID/version.txt`/" ./$PACKAGE_ID/$PACKAGE_ID.csproj

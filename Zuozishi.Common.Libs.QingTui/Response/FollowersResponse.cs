@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Zuozishi.Common.Libs.QingTui.Response
+﻿namespace Zuozishi.Common.Libs.QingTui.Response
 {
     public class FollowersResponse : ErrorResponse
     {

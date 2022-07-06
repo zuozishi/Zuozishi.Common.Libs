@@ -1,6 +1,6 @@
 ﻿using Flurl;
 using Flurl.Http;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Zuozishi.Common.Libs.QingTui.Response;
 
 namespace Zuozishi.Common.Libs.QingTui
@@ -21,7 +21,9 @@ namespace Zuozishi.Common.Libs.QingTui
                 .SetQueryParam("grant_type", "client_credential")
                 .SetQueryParam("qt_code", qtCode)
                 .SetQueryParam("secret", _qtAPI.AppInfo.AppSecret);
-            return await url.GetJsonAsync<UserInfoResponse>();
+            Console.WriteLine(url.ToString());
+            string json = await url.GetStringAsync();
+            return JsonConvert.DeserializeObject<UserInfoResponse>(json);
         }
 
         public async Task<MemberResponse> GetMemberDetailAsync(string openId)

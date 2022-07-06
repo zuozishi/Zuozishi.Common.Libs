@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Zuozishi.Common.Libs.Extensions
+﻿namespace Zuozishi.Common.Libs.Extensions
 {
     public static class IEnumerableExtension
     {

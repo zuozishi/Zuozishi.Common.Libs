@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Zuozishi.Common.Libs.QingTui
+﻿namespace Zuozishi.Common.Libs.QingTui
 {
     public class QtAppInfo
     {

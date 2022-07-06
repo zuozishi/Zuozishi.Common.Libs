@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Zuozishi.Common.Libs.QingTui.Request
+﻿namespace Zuozishi.Common.Libs.QingTui.Request
 {
     /// <summary>
     /// 文本卡片消息

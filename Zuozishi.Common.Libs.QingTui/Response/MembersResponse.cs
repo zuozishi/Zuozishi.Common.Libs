@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
 using Zuozishi.Common.Libs.QingTui.Models;
 
 namespace Zuozishi.Common.Libs.QingTui.Response

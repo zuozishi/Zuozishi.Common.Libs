@@ -1,6 +1,5 @@
 ﻿using Flurl;
 using Flurl.Http;
-using System.Threading.Tasks;
 using Zuozishi.Common.Libs.QingTui.Models;
 using Zuozishi.Common.Libs.QingTui.Response;
 
@@ -74,7 +73,8 @@ namespace Zuozishi.Common.Libs.QingTui
         public async Task<ErrorResponse> DeleteMemberAsync(string userId)
         {
             var url = QingTuiAPI.QtHost.AppendPathSegment("team/member/delete/single");
-            return await _qtAPI.PostUrlEncodedAsync<ErrorResponse>(url, new {
+            return await _qtAPI.PostUrlEncodedAsync<ErrorResponse>(url, new
+            {
                 user_id = userId
             });
         }
