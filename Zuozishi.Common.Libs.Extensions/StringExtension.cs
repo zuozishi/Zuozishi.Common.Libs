@@ -32,7 +32,7 @@ namespace Zuozishi.Common.Libs.Extensions
         /// </summary>
         /// <param name="length">长度</param>
         /// <returns></returns>
-        public static string GUID(int length)
+        public static string GUID(int length = 32)
         {
             string res = "";
             while (length >= res.Length)

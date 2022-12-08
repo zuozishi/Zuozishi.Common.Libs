@@ -1,4 +1,4 @@
-﻿namespace Zuozishi.Common.Libs.AspNetCore;
+﻿namespace Zuozishi.Common.Libs.AspNetCore.Attributes;
 
 /// <summary>
 /// DI注入注解

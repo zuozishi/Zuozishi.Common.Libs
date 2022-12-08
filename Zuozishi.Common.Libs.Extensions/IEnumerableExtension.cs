@@ -11,7 +11,7 @@
         /// <returns></returns>
         public static string ToString<T>(this IEnumerable<T> array, string SplitChar)
         {
-            if (array == null || array.Count() == 0 || SplitChar == null) return "";
+            if (array == null || !array.Any() || SplitChar == null) return "";
             var pts = array.Where(o => o.ToString().Length > 0).ToArray();
             if (pts.Length == 0) return "";
             string str = "";
@@ -20,7 +20,7 @@
                 str += item.ToString() + SplitChar;
             }
             int len = SplitChar.Length;
-            return str.Substring(0, str.Length - len);
+            return str[..^len];
         }
 
         /// <summary>
