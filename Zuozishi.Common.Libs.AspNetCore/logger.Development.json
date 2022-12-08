@@ -1,0 +1,29 @@
+{
+	"DetailedErrors": true,
+	"Serilog": {
+		"Enrich": [
+			"FromLogContext",
+			"WithMachineName",
+			"WithThreadId"
+		],
+		"MinimumLevel": {
+			"Default": "Information",
+			"Override": {
+				"Microsoft": "Warning",
+				"Microsoft.AspNetCore.Routing.Matching.DfaMatcher": "Warning",
+				"Microsoft.EntityFrameworkCore": "Error",
+				"Microsoft.EntityFrameworkCore.Model.Validation": "Error",
+				"Microsoft.Hosting.Lifetime": "Information",
+				"Microsoft.AspNetCore.Hosting.Diagnostics": "Warning"
+			}
+		},
+		"WriteTo": [
+			{
+				"Name": "Console",
+				"Args": {
+					"outputTemplate": "[{Timestamp:HH:mm:ss} {Level:u3}][{MiniSourceContext}] {Message}{NewLine}{Exception}"
+				}
+			}
+		]
+	}
+}

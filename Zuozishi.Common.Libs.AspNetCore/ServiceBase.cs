@@ -4,7 +4,7 @@ namespace Zuozishi.Common.Libs.AspNetCore;
 
 public abstract class ServiceBase
 {
-    private readonly IServiceProvider ServiceProvider;
+    public readonly IServiceProvider ServiceProvider;
 
     public ServiceBase(IServiceProvider serviceProvider)
     {

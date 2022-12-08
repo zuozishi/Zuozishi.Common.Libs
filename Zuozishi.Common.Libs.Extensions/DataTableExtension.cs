@@ -13,7 +13,7 @@ namespace Zuozishi.Common.Libs.Extensions
             {
                 sb.Append(dt.Columns[i].ColumnName);
                 if (i < dt.Columns.Count - 1)
-                    sb.Append(",");
+                    sb.Append(',');
             }
             sb.Append(Environment.NewLine);
             // data
@@ -36,7 +36,7 @@ namespace Zuozishi.Common.Libs.Extensions
                     }
                     if (i < dt.Columns.Count - 1)
                     {
-                        sb.Append(",");
+                        sb.Append(',');
                     }
                 }
                 sb.Append(Environment.NewLine);
